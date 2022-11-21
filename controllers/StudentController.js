@@ -12,7 +12,7 @@ const GetAllStudents = async (req, res) => {
 
 const GetStudentById = async (req, res) => {
   try {
-    const student = await Student.findByPk(req.params.id)
+    const student = await Student.findByPk(req.params.student_id)
     res.send(student)
   } catch (error) {
     throw error
