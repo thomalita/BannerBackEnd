@@ -14,6 +14,7 @@ Router.get(
 )
 Router.get('/:user_id', userController.GetUserById)
 
+
 Router.put(
   '/:user_id',
   middleware.stripToken,
