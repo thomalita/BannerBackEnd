@@ -1,5 +1,6 @@
-const { Class } = require('../models')
+const { Class, StudentClass, Student } = require('../models')
 const Sequelize = require('sequelize')
+const { GetStudentAndClasses } = require('./StudentClassController')
 
 const GetAllClasses = async (req, res) => {
   try {
@@ -12,7 +13,9 @@ const GetAllClasses = async (req, res) => {
 
 const GetClassById = async (req, res) => {
   try {
-    const aClass = await Class.findByPk(req.params.class_id)
+    const aClass = await Class.findByPk(req.params.class_id, {
+      include: { model: Student, through: StudentClass, as: 'classes' }
+    })
     res.send(aClass)
   } catch (error) {
     throw error

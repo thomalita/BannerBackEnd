@@ -20,13 +20,13 @@ const CreateUser = async (req, res) => {
 }
 
 const GetUserById = async (req, res) => {
-    try {
-      const user = await User.findByPk(req.params.user_id)
-      res.send(user)
-    } catch (error) {
-      throw error
-    }
+  try {
+    const user = await User.findByPk(req.params.user_id)
+    res.send(user)
+  } catch (error) {
+    throw error
   }
+}
 
 const UpdateUser = async (req, res) => {
   try {
