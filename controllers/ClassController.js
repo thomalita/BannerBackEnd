@@ -10,7 +10,7 @@ const GetAllClasses = async (req, res) => {
   }
 }
 
-const getClassById = async (req, res) => {
+const GetClassById = async (req, res) => {
   try {
     const aClass = await Class.findByPk(req.params.class_id)
     res.send(aClass)
@@ -30,6 +30,6 @@ const CreateClass = async (req, res) => {
 
 module.exports = {
   GetAllClasses,
-  getClassById,
+  GetClassById,
   CreateClass
 }

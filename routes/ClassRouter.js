@@ -5,6 +5,7 @@ Router.get('/', controller.GetAllClasses)
 Router.post('/', controller.CreateClass)
 // Router.put('/class_id', controller.UpdateClass)
 // Router.delete('/class_id', controller.DeleteClass)
-Router.get('/:class_id', controller.getClassById)
+Router.get('/:class_id', controller.GetClassById)
+
 
 module.exports = Router
