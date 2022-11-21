@@ -4,7 +4,7 @@ const logger = require('morgan')
 
 const app = express()
 
-// const AppRouter = require('./routes/AppRouter')
+const AppRouter = require('./routes/AppRouter')
 
 const PORT = process.env.PORT || 3001
 
@@ -14,5 +14,5 @@ app.use(logger('dev'))
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => res.json({ message: 'Server Works' }))
-// app.use('/api', AppRouter)
+app.use('/api', AppRouter)
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))

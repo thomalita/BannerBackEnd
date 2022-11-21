@@ -1,12 +1,11 @@
 const Router = require('express').Router()
-const controller = require('../controllersclassController')
+<<<<<<< HEAD
+const controller = require('../controllers/ClassController')
 
-Router.get('/', controller.GetAllClass)
+Router.get('/', controller.GetAllClasses)
 Router.post('/', controller.CreateClass)
-Router.put('/:class_id', controller.UpdateClass)
-Router.delete('/:class_id', controller.DeleteClass)
-Router.get('/:class_id', controller.getClassById)
-
-
+// Router.put('/class_id', controller.UpdateClass)
+// Router.delete('/class_id', controller.DeleteClass)
+Router.get('/class_id', controller.getClassById)
 
 module.exports = Router
