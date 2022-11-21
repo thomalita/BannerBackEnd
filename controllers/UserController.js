@@ -19,6 +19,15 @@ const CreateUser = async (req, res) => {
   }
 }
 
+const GetUserById = async (req, res) => {
+    try {
+      const user = await User.findByPk(req.params.user_id)
+      res.send(user)
+    } catch (error) {
+      throw error
+    }
+  }
+
 const UpdateUser = async (req, res) => {
   try {
     let userId = parseInt(req.params.user_id)
@@ -45,6 +54,7 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   GetAllUsers,
   CreateUser,
+  GetUserById,
   UpdateUser,
   DeleteUser
 }
