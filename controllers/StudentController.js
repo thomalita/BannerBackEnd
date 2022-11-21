@@ -1,5 +1,4 @@
 const { Student } = require('../models')
-const Sequelize = require('sequelize')
 
 const GetAllStudents = async (req, res) => {
   try {
