@@ -14,13 +14,6 @@ Router.get(
 )
 Router.get('/:user_id', userController.GetUserById)
 
-
-Router.put(
-  '/:user_id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  userController.UpdateUser
-)
 Router.delete('/:user_id', userController.DeleteUser)
 
 module.exports = Router
